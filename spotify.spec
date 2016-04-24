@@ -18,7 +18,7 @@
 
 Name:           spotify
 Version:	0.9.17.8
-Release:	g9cb177b.260
+Release:	gd06432d.31-1
 License:	Any Commercial
 Summary:	A world of Music
 Url:	http://repository.spotify.com/pool/non-free/s/spotify
