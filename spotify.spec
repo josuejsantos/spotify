@@ -17,16 +17,16 @@
 #
 
 Name:           spotify
-Version:	0.9.17.8
-Release:	gd06432d.31-1
+Version:	0.9.17_0.9.17.8
+Release:	gd06432d.31
 License:	Any Commercial
 Summary:	A world of Music
 Url:	http://repository.spotify.com/pool/non-free/s/spotify
 Group:	Productivity/Multimedia/Sound/Players
 %ifarch x86_64
-Source0: %{name}-client_%{version}.%{release}-1_amd64.deb
+Source0: %{name}-client-%{version}.%{release}-1_amd64.deb
 %else
-Source0: %{name}-client_%{version}.%{release}-1_i386.deb
+Source0: %{name}-client-%{version}.%{release}-1_i386.deb
 %endif
 NoSource:	0
 %if 0%{?suse_version}
@@ -62,7 +62,9 @@ ar -x *.deb
 # remove used deb
 rm -rf *.deb
 # unpack data
-tar -xzf data.tar.gz
+#tar -xzf data.tar.gz
+# unpack data
+tar -Jxf data.tar.xz
 # remove used files
 rm -rf *.gz
 rm -rf debian-binary
@@ -144,7 +146,7 @@ export NO_BRP_CHECK_RPATH=true
 %{_datadir}/pixmaps/spotify-linux-512x512.png
 
 %changelog
-* Mon Aug 20 2012 Marguerite Su <i@marguerite.su> - 0.9.17_0.9.17.8.gd06432d.31-1
+* Mon Aug 20 2012 Marguerite Su <i@marguerite.su> - 0.8.4.103.g9cb117b.260
 - initial version with Spotify App support.
 - use libopenssl1_0_0 instead of libopenssl0_9_8 to fix a crash and other linkings ready.
 - use wrapper to clear cache manually
